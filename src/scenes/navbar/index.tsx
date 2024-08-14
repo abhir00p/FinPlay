@@ -4,9 +4,9 @@ import { useTheme, Box, Typography } from "@mui/material";
 import FlexBetween from "@/components/FlexBetween";
 import PixIcon from '@mui/icons-material/Pix';
 
-type Props = {}
+// type Props = {}; // Remove the unused Props type declaration
 
-const Navbar = (props: Props) => {
+const Navbar = () => { //Here also prop was removed
     const { palette } = useTheme();
     const [selected, setSelected] = useState("dashboard");
   return (

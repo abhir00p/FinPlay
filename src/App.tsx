@@ -4,6 +4,7 @@ import { themeSettings } from "./theme";
 import { Box, CssBaseline, dividerClasses, ThemeProvider } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "@/scenes/navbar";
+import { Dashboard } from "@scenes/dashboard";
 
 function App() {
   const theme = useMemo(() => createTheme(themeSettings), []) //"[]" tells react to only create the theme once and not on every render
