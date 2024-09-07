@@ -5,6 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import e from 'express';
 
 /*Config*/
 dotenv.config();
@@ -17,7 +18,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-
-console.log("Hello");
 /*Mongoose Setup*/
-
+const PORT = process.env.PORT || 9000; //This setups the port to be used by the server
+mongoose
+    .connect(process.env.MONGO_URL)
+    .then(async () => {
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    })
+    .catch((error) => console.log(`${error} did not connect`));
