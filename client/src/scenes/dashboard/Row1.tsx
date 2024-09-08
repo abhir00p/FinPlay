@@ -2,8 +2,9 @@ import DashboardBox from '@/components/DashboardBox'
 import { useGetKpisQuery } from '@/state/api'
 
 const Row1 = () => {
+  const { data } = useGetKpisQuery();
+  console.log("data:",data)
 
-  const { data } = useGetKpisQuery(); 
   return (
     <>
     <DashboardBox gridArea="a"></DashboardBox>
