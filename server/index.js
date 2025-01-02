@@ -33,6 +33,6 @@ mongoose
 
         /*ADD DATA ONE TIME ONLY OR AS NEEDED*/
         // await mongoose.connection.db.dropCollection(); //Dropping current database DONT DO THIS IN PRODUCTION
-        // KPI.insertMany(kpis); //Inserting data into the database 
+        // KPI.insertMany(kpis); 
     })
     .catch((error) => console.log(`${error} did not connect`));
