@@ -7,7 +7,9 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import kpiRouter from './routes/kpi.js'; //NEED TO SPECIFY .JS EXTENSION IN NODEJS
 import KPI from './models/KPI.js'; 
-import { kpis } from './data/data.js';
+import productRoutes from './routes/product.js';
+import Product from './models/Product.js';
+import { kpis, products } from './data/data.js';
 
 /*Config*/
 dotenv.config();
@@ -22,6 +24,7 @@ app.use(cors());
 
 /*Routes*/
 app.use('/kpi', kpiRouter);
+app.use("/product", productRoutes);
 
 
 /*Mongoose Setup*/
@@ -33,6 +36,7 @@ mongoose
 
         /*ADD DATA ONE TIME ONLY OR AS NEEDED*/
         // await mongoose.connection.db.dropCollection(); //Dropping current database DONT DO THIS IN PRODUCTION
-        // KPI.insertMany(kpis); 
+        //KPI.insertMany(kpis); //Inserting KPI data
+        //Product.insertMany(products); //Inserting Product data
     })
     .catch((error) => console.log(`${error} did not connect`));
