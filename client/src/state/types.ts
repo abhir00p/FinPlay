@@ -34,3 +34,16 @@ export interface ExpensesByCategory {
     __v: number;
   }
   
+  export interface GetProductsResponse {
+    id: string;
+    price: number;
+    expenses: number;
+    transactions: Array<string>;
+    expensesByCategory: ExpensesByCategory;
+    monthlyData: Array<Month>;
+    dailyData: Array<Day>;
+    createdAt: string;
+    updatedAt: string;
+    _id: string;
+    __v: number;
+  }
